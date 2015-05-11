@@ -136,6 +136,23 @@ class Search extends AbstractOperation
     }
 
     /**
+     * Filter on available products
+     *
+     * When the Availability parameter is not set, ItemSearch returns available and unavailable items.
+     * “Available” is the only valid value for Availability. 
+     *
+     * @param string $availability
+     *
+     * @return \ApaiIO\Operations\Search
+     */
+    public function setAvailability($availability)
+    {
+        $this->parameter['Availability'] = $availability;
+
+        return $this;
+    }
+
+    /**
      * Validates the given price.
      *
      * @param integer $price
